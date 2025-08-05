@@ -27,7 +27,8 @@ const DataSourceSidebar: React.FC<Props> = ({
 
   const updateRule = (index: number, key: keyof ThresholdRule, value: any) => {
     const newRules = [...rules];
-    newRules[index][key] = value;
+    /** ✅ TypeScript suppress: allow writing any value into that rule recast */
+    (newRules[index] as any)[key] = value;
     setRules(newRules);
   };
 
