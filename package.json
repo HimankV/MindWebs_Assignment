@@ -12,10 +12,10 @@
     "leaflet": "^1.9.4",
     "next": "15.4.5",
     "rc-slider": "^11.1.8",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-leaflet": "4.2.1",
-    "react-leaflet-draw": "0.20.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-draw": "^0.20.6",
     "react-slider": "^2.0.6"
   },
   "devDependencies": {
