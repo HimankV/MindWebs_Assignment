@@ -74,6 +74,7 @@ const Page = () => {
             timeRange={timeRange}
             polygons={polygons}
             setPolygons={setPolygons}
+            fetchColorsForPolygons={fetchColorsForPolygons}
           />
         </div>
       </div>
