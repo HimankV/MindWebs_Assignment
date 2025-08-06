@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-// import Navbar from "./navbar";
 import TimelineSlider from "./timelineSlider";
 import DataSourceSidebar from "./dataSourceSidebar";
-import PolygonMap from "./polygonMap";
+import dynamic from "next/dynamic";
 
 interface ThresholdRule {
   operator: "<" | "<=" | "=" | ">=" | ">";
@@ -19,6 +18,11 @@ interface PolygonData {
   color: string;
   value: number;
 }
+
+// dynamically import to avoid window undefined during SSR
+const PolygonMap = dynamic(() => import("./polygonMap"), {
+  ssr: false,
+});
 
 const Page = () => {
   const [field, setField] = useState("temperature_2m");
@@ -47,16 +51,10 @@ const Page = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* <div className="px-4 pt-4">
-        <Navbar />
-      </div> */}
-
-      {/* Timeline Slider */}
       <div className="mt-4 mb-2">
         <TimelineSlider timeRange={timeRange} setTimeRange={setTimeRange} />
       </div>
 
-      {/* Main content section now takes more height */}
       <div className="flex flex-grow gap-3 p-3" style={{ height: "90vh" }}>
         <div className="flex-shrink-0">
           <DataSourceSidebar
@@ -77,6 +75,7 @@ const Page = () => {
           />
         </div>
       </div>
+
       <div style={{ display: "flex", justifyContent: "center" }}>
         <p
           style={{
@@ -86,8 +85,6 @@ const Page = () => {
             fontSize: "30px",
             marginBottom: "100px",
             textDecoration: "underline",
-
-            // fontWeight: "700",
           }}
         >
           Assignment made by - Himank Verma
