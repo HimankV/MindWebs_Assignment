@@ -20,19 +20,37 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
 # MindWebs_Assignment
+
+Libraries used -
+
+| Library     | Version | Purpose                                                                  |
+| ----------- | ------- | ------------------------------------------------------------------------ |
+| `next`      | 15.x    | Framework for building React apps with routing, SSR, app directory, etc. |
+| `react`     | 19.x    | Core UI library (hooks, components, rendering).                          |
+| `react-dom` | 19.x    | Handles rendering React components into the DOM.                         |
+
+| Library              | Version | Purpose                                                                 |
+| -------------------- | ------- | ----------------------------------------------------------------------- |
+| `leaflet`            | 1.9.x   | Core mapping library used to display interactive maps.                  |
+| `react-leaflet`      | 5.x     | React bindings/wrapper around Leaflet maps.                             |
+| `react-leaflet-draw` | 0.20.x  | Adds drawing/editing tools to Leaflet maps (for drawing polygons etc.). |
+
+| Library        | Version | Purpose                                                      |
+| -------------- | ------- | ------------------------------------------------------------ |
+| `react-slider` | 2.x     | UI slider component used for the custom timeline slider.     |
+| `rc-slider`    | 11.x    | another slider UI library                                    |
+
+| Library        | Version | Purpose                                                   |
+| -------------- | ------- | --------------------------------------------------------- |
+| `tailwindcss`  | 4.x     | Utility-first CSS framework used to style UI components.  |
+| `postcss` etc. |         | Build-tool dependencies to power Tailwind inside Next.js. |
+
+| Library            | Purpose                                   |
+| ------------------ | ----------------------------------------- |
+| `typescript`       | Type safety with `.tsx` components.       |
+| `eslint` + plugins | Code linting / formatting.                |
+| `@types/react`     | Type definitions for React + TS projects. |
+
+
