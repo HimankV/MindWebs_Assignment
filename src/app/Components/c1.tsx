@@ -1,15 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-
-// dynamically import components that depend on 'window'
-const TimelineSlider = dynamic(() => import("./timelineSlider"), {
-  ssr: false,
-});
-const PolygonMap = dynamic(() => import("./polygonMap"), { ssr: false });
-
+// import Navbar from "./navbar";
+import TimelineSlider from "./timelineSlider";
 import DataSourceSidebar from "./dataSourceSidebar";
-import Navbar from "./navbar";
+import PolygonMap from "./polygonMap";
 
 interface ThresholdRule {
   operator: "<" | "<=" | "=" | ">=" | ">";
@@ -53,12 +47,16 @@ const Page = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* <div className="px-4 pt-4"><Navbar /></div> */}
+      {/* <div className="px-4 pt-4">
+        <Navbar />
+      </div> */}
 
+      {/* Timeline Slider */}
       <div className="mt-4 mb-2">
         <TimelineSlider timeRange={timeRange} setTimeRange={setTimeRange} />
       </div>
 
+      {/* Main content section now takes more height */}
       <div className="flex flex-grow gap-3 p-3" style={{ height: "90vh" }}>
         <div className="flex-shrink-0">
           <DataSourceSidebar
@@ -76,18 +74,20 @@ const Page = () => {
             timeRange={timeRange}
             polygons={polygons}
             setPolygons={setPolygons}
-            fetchColorsForPolygons={fetchColorsForPolygons}
           />
         </div>
       </div>
-
       <div style={{ display: "flex", justifyContent: "center" }}>
         <p
           style={{
             fontFamily: "HelveticaNeue",
             marginLeft: "50px",
-            marginTop: "50px",
+            marginTop: "100px",
             fontSize: "30px",
+            marginBottom: "100px",
+            textDecoration: "underline",
+
+            // fontWeight: "700",
           }}
         >
           Assignment made by - Himank Verma

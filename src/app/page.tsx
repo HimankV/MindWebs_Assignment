@@ -1,10 +1,6 @@
-import MapWithPolygons from "./Components/c1";
+"use client";
+import Page from "./Components/c1";
+
 export default function Home() {
-  return (
-    <>
-      <div>
-        <MapWithPolygons />
-      </div>
-    </>
-  );
+  return <Page />;
 }

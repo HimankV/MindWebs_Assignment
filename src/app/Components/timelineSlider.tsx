@@ -75,19 +75,18 @@ const TimelineSlider: React.FC<TimelineSliderProps> = ({
                   }
                 `}
               >
-                {/* Tooltip on hover */}
                 <div
                   className={`
-                  absolute -top-8 left-1/2 transform -translate-x-1/2 
-                  px-2 py-1 rounded text-xs font-medium whitespace-nowrap
-                  transition-all duration-200 opacity-0 group-hover:opacity-100 
-                  pointer-events-none z-10 shadow-md
-                  ${
-                    isToday
-                      ? "bg-green-600 text-white"
-                      : "bg-gray-800 text-white"
-                  }
-                `}
+                    absolute -top-8 left-1/2 transform -translate-x-1/2 
+                    px-2 py-1 rounded text-xs font-medium whitespace-nowrap
+                    transition-all duration-200 opacity-0 group-hover:opacity-100 
+                    pointer-events-none z-10 shadow-md
+                    ${
+                      isToday
+                        ? "bg-green-600 text-white"
+                        : "bg-gray-800 text-white"
+                    }
+                  `}
                 >
                   {formatHourLabel(hour)}
                 </div>
@@ -113,12 +112,13 @@ const TimelineSlider: React.FC<TimelineSliderProps> = ({
         />
       </div>
 
-      <div className="mt-3 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm text-gray-600">
+      {/* CENTERED SELECTED RANGE */}
+      <div className="mt-3 flex flex-col items-center justify-center text-sm text-gray-600 space-y-1">
+        <div className="flex items-center gap-2">
           <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></span>
           Selected Range:
         </div>
-        <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center gap-2">
           <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-md font-medium text-xs">
             {formatHourLabel(timeRange[0])}
           </span>
